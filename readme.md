@@ -6,4 +6,6 @@
 
 > Leetcode 1636 https://leetcode.com/problems/sort-array-by-increasing-frequency/
 ##### SQL
->
+> Leetcode 597 https://leetcode.com/problems/friend-requests-i-overall-acceptance-rate/submissions/
+
+> Leetcode 601 https://leetcode.com/problems/human-traffic-of-stadium/
