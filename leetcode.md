@@ -20,3 +20,9 @@
 > [Leetcode 574](https://leetcode.com/problems/winning-candidate/description/)
 
 > [Leetcode 578](https://leetcode.com/problems/get-highest-answer-rate-question/)
+
+#### Day 3
+##### Python
+>[Leetcode 1334](https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/description/)
+
+>[Leetcode 2392](https://leetcode.com/problems/build-a-matrix-with-conditions/description/)
