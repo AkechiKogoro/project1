@@ -5,6 +5,7 @@
 > [Leetcode 2191](https://leetcode.com/problems/sort-the-jumbled-numbers/description/)
 
 > [Leetcode 1636](https://leetcode.com/problems/sort-array-by-increasing-frequency/)
+
 ##### SQL
 > [Leetcode 597](https://leetcode.com/problems/friend-requests-i-overall-acceptance-rate/submissions/)
 
@@ -26,3 +27,8 @@
 >[Leetcode 1334](https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/description/)
 
 >[Leetcode 2392](https://leetcode.com/problems/build-a-matrix-with-conditions/description/)
+
+##### SQL
+>[Leetcode 579](https://leetcode.com/problems/find-cumulative-salary-of-an-employee/)
+
+>[Leetcode 612](https://leetcode.com/problems/shortest-distance-in-a-plane/)
