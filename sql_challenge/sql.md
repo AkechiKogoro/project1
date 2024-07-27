@@ -4,6 +4,7 @@ SELECT S.customer_id, SUM(M.price) AS total_cost
 FROM sales S LEFT JOIN menu M
 ON S.product_id = M.product_id 
 GROUP BY S.customer_id
+ORDER BY total_cost DESC, customer_id ASC
 ```
 
 2. How many days has each customer visited the restaurant?
@@ -12,6 +13,7 @@ SELECT S.customer_id, COUNT(DISTINCT S.order_date) AS days
 FROM sales S LEFT JOIN menu M
 ON S.product_id = M.product_id 
 GROUP BY S.customer_id
+ORDER BY days DESC, customer_id ASC
 ```
 
 3. What was the first item from the menu purchased by each customer?
