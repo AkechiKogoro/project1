@@ -32,3 +32,13 @@
 >[Leetcode 579](https://leetcode.com/problems/find-cumulative-salary-of-an-employee/)
 
 >[Leetcode 612](https://leetcode.com/problems/shortest-distance-in-a-plane/)
+
+#### 2024-07-29
+##### Python
+>[Leetcode 2976](https://leetcode.com/problems/minimum-cost-to-convert-string-i)
+
+>[Leetcode 1395](https://leetcode.com/problems/count-number-of-teams/)
+
+##### SQL
+>[Leetcode 613](https://leetcode.com/problems/shortest-distance-in-a-line)
+>[Leetcode 614](https://leetcode.com/problems/second-degree-follower)
