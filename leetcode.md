@@ -54,3 +54,12 @@
 >[Leetcode 615](https://leetcode.com/problems/average-salary-departments-vs-company)
 
 >[Leetcode 1069](https://leetcode.com/problems/product-sales-analysis-ii)
+
+#### 2024-07-31
+>[Leetcode 2305](https://leetcode.com/problems/second-minimum-time-to-reach-destination)
+
+>[Leetcode 1105](https://leetcode.com/problems/filling-bookcase-shelves)
+##### SQL
+>[Leetcode 1076](https://leetcode.com/problems/project-employees-ii)
+
+>[Leetcode 1082](https://leetcode.com/problems/sales-analysis-i)
