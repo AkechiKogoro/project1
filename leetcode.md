@@ -56,6 +56,8 @@
 >[Leetcode 1069](https://leetcode.com/problems/product-sales-analysis-ii)
 
 #### 2024-07-31
+
+#### Python
 >[Leetcode 2305](https://leetcode.com/problems/second-minimum-time-to-reach-destination)
 
 >[Leetcode 1105](https://leetcode.com/problems/filling-bookcase-shelves)
@@ -63,3 +65,15 @@
 >[Leetcode 1076](https://leetcode.com/problems/project-employees-ii)
 
 >[Leetcode 1082](https://leetcode.com/problems/sales-analysis-i)
+
+#### 2024-08-31
+
+##### Python
+>[Leetcode 2678](https://leetcode.com/problems/number-of-senior-citizens)
+
+>[Leetcode 1605](https://leetcode.com/problems/find-valid-matrix-given-row-and-column-sums)
+
+##### SQL
+>[Leetcode 1083](https://leetcode.com/problems/sales-analysis-ii)
+
+>[Leetcode 1097](https://leetcode.com/problems/game-play-analysis-v)
