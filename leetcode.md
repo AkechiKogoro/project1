@@ -66,7 +66,7 @@
 
 >[Leetcode 1082](https://leetcode.com/problems/sales-analysis-i)
 
-#### 2024-08-31
+#### 2024-08-01
 
 ##### Python
 >[Leetcode 2678](https://leetcode.com/problems/number-of-senior-citizens)
@@ -77,3 +77,17 @@
 >[Leetcode 1083](https://leetcode.com/problems/sales-analysis-ii)
 
 >[Leetcode 1097](https://leetcode.com/problems/game-play-analysis-v)
+
+#### 2024-08-02
+
+##### Python
+
+>[Leetcode 1518](https://leetcode.com/problems/water-bottles)
+
+>[Leetcode 2582](https://leetcode.com/problems/pass-the-pillow)
+
+##### SQL
+
+>[Leetcode 1098](https://leetcode.com/problems/unpopular-books/)
+
+>[Leetcode 1107](https://leetcode.com/problems/new-users-daily-count)
