@@ -86,8 +86,25 @@
 
 >[Leetcode 2582](https://leetcode.com/problems/pass-the-pillow)
 
+>[Leetcode 2134](https://leetcode.com/problems/minimum-swaps-to-group-all-1s-together-ii)
+
 ##### SQL
 
 >[Leetcode 1098](https://leetcode.com/problems/unpopular-books/)
 
 >[Leetcode 1107](https://leetcode.com/problems/new-users-daily-count)
+
+
+##### 2024-08-03
+
+##### Python
+
+>[Leetcode 1508](https://leetcode.com/problems/range-sum-of-sorted-subarray-sums)
+
+>[Leetcode 2053](https://leetcode.com/problems/kth-distinct-string-in-an-array)
+
+##### SQL
+
+>[Leetcode 1113](https://leetcode.com/problems/reported-posts)
+
+>[Leetcode 1127](https://leetcode.com/problems/user-purchase-platform)
