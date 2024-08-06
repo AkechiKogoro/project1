@@ -119,3 +119,11 @@
 > [Leetcode 1530](https://leetcode.com/problems/number-of-good-leaf-nodes-pairs)
 
 > [Leetcode 3016](https://leetcode.com/problems/minimum-number-of-pushes-to-type-word-ii)
+
+##### SQL
+
+>[Leetcode 1132](https://leetcode.com/problems/reported-posts-ii)
+
+>[Leetcode 1142](https://leetcode.com/problems/user-activity-for-the-past-30-days-ii)
+
+>
