@@ -34,6 +34,7 @@
 >[Leetcode 612](https://leetcode.com/problems/shortest-distance-in-a-plane)
 
 #### 2024-07-29
+
 ##### Python
 >[Leetcode 2976](https://leetcode.com/problems/minimum-cost-to-convert-string-i)
 
@@ -45,6 +46,7 @@
 >[Leetcode 614](https://leetcode.com/problems/second-degree-follower)
 
 #### 2024-07-30
+
 ##### Python
 >[Leetcode 1653](https://leetcode.com/problems/minimum-deletions-to-make-string-balanced)
 
@@ -57,10 +59,11 @@
 
 #### 2024-07-31
 
-#### Python
+##### Python
 >[Leetcode 2305](https://leetcode.com/problems/second-minimum-time-to-reach-destination)
 
 >[Leetcode 1105](https://leetcode.com/problems/filling-bookcase-shelves)
+
 ##### SQL
 >[Leetcode 1076](https://leetcode.com/problems/project-employees-ii)
 
@@ -95,7 +98,7 @@
 >[Leetcode 1107](https://leetcode.com/problems/new-users-daily-count)
 
 
-##### 2024-08-03
+#### 2024-08-05
 
 ##### Python
 
@@ -108,3 +111,11 @@
 >[Leetcode 1113](https://leetcode.com/problems/reported-posts)
 
 >[Leetcode 1127](https://leetcode.com/problems/user-purchase-platform)
+
+#### 2024-08-06
+
+##### Python
+
+> [Leetcode 1530](https://leetcode.com/problems/number-of-good-leaf-nodes-pairs)
+
+> [Leetcode 3016](https://leetcode.com/problems/minimum-number-of-pushes-to-type-word-ii)
