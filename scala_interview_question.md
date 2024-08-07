@@ -24,7 +24,7 @@
 > In Scala, a closure is a function whose return value depends on some variable(s) defined outside the function.
 
 8.	What is a companion object? What are the advantages ? example
->
+> 
 
 9.	Nil vs Null vs null vs Nothing vs None vs Unit 
 > __*null*__ represents the absent value of a reference that is not referring to any object.
@@ -42,8 +42,18 @@
 >__*option type*__
 
 10.	What is pure function?
+> In Scala, a pure function is a function that
+> - always returns the same value for the same arguments.
+> - never modifies variables outside.
+> - never read variables other than arguments and follow an internal algorithm to produce output.
+
 11.	What is SBT and how have you used it? 
+
+> SBT is the first build tool which was created specifically for Scala.
+
 12.	What is currying?
+> Currying is the process of converting a function with multiple arguments into a sequence of functions taking one argument. Each function returns another function that consumes the following argument.
+
 13.	Difference between currying and higher-order functions
 14.	Difference between var and val?
 15.	What is case class?
