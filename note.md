@@ -1,27 +1,37 @@
 ### 2024-08-05
 
 #### hadoop command
->__hadoop fs -"__ ls, mv, cat, put, get, moveFromLocal, moveToLocal, getmerge, mkdir, appendToFile
+>__hadoop fs -__ ls, mv, cat, put, get, moveFromLocal, moveToLocal, getmerge, mkdir, appendToFile
 
 >__hadoop fsck__ 
 
 >__hdfs dfs-__ checkSum
 
-14:14:27	INSERT INTO customer_backup (cid, name, email, lastchange) SELECT * FROM customer ON DUPLICATE KEY UPDATE  name = VALUES(name),     email = VALUES(email),     lastchange = VALUES(lastchange)	3 row(s) affected, 3 warning(s): 
+#### Sqoop
 
-1287 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead 
+- Hadoop ecosystem tool
 
-1287 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead 
+- Ingestion tool: Database to HDFS and vice versa
 
 
-1287 'VALUES function' is deprecated and will be removed in a future release. Please use an alias (INSERT INTO ... VALUES (...) AS alias) and replace VALUES(col) in the ON DUPLICATE KEY UPDATE clause with alias.col instead Records: 3  Duplicates: 0  Warnings: 3	0.000 sec
+```
+sqoop import --connect jdbc:postgresql://ec2-18-132-73-146.eu-west-2.compute.amazonaws.com:5432/testdb --username consultants -password WelcomeItc@2022 --table customer --m 1 --target-dir /user/ec2-user/UKUSJULHDFS/yesheng/customer
+```
 
-'CREATE TABLE `customer` (
-  `cid` char(10) NOT NULL,
-  `name` char(20) DEFAULT NULL,
-  `email` char(40) DEFAULT NULL,
-  `lastchange` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`cid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci'
+```
+sqoop export --connect jdbc:postgresql://ec2-18-132-73-146.eu-west-2.compute.amazonaws.com:5432/testdb --username consultants -password WelcomeItc@2022 --table new_customer --m 1 --export-dir /user/ec2-user/UKUSJULHDFS/yesheng/customer
+```
 
-Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SELECT * FROM customer_backup' at line 6
+```
+sqoop eval --connect jdbc:postgresql://ec2-18-132-73-146.eu-west-2.compute.amazonaws.com:5432/testdb --username consultants -password WelcomeItc@2022 --query "SELECT * FROM customer;"
+```
+
+```
+sqoop import --connect jdbc:postgresql://ec2-18-132-73-146.eu-west-2.compute.amazonaws.com:5432/testdb --username consultants -password WelcomeItc@2022 --table customer --m 1 --target-dir /user/ec2-user/UKUSJULHDFS/yesheng/customer --incremental append check-column customer_id --last-value 0
+```
+--incremental: append (insert primary key), lastmodified (I/U/D, timestamp)
+
+
+```
+sqoop import --connect jdbc:postgresql://ec2-18-132-73-146.eu-west-2.compute.amazonaws.com:5432/testdb --username consultants -password WelcomeItc@2022 --table customer_replicate --m 1 --target-dir /user/ec2-user/UKUSJULHDFS/yesheng/customer --incremental lastmodified --merge-key customer_id --check-column lastchange --last-value "2024-08-07 16:30:00"
+```

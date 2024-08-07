@@ -126,4 +126,17 @@
 
 >[Leetcode 1142](https://leetcode.com/problems/user-activity-for-the-past-30-days-ii)
 
->
+
+#### 2024-08-07
+
+##### Python
+
+>[Leetcode 1110](https://leetcode.com/problems/delete-nodes-and-return-forest)
+
+>[Leetcode 2096](https://leetcode.com/problems/step-by-step-directions-from-a-binary-tree-node-to-another)
+
+##### SQL 
+
+>[Leetcode 1179](https://leetcode.com/problems/reformat-department-table)
+
+>[Leetcode 1194](https://leetcode.com/problems/tournament-winners)

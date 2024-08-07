@@ -8,6 +8,8 @@
 
 - Sales revenue by liquor category
 
+- Sales revenue by ABV
+
 - Sales revenue by county
 
 - Store revenues
