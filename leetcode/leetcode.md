@@ -154,3 +154,17 @@
 >[Leetcode 1205](https://leetcode.com/problems/monthly-transactions-ii)
 
 >[Leetcode 1212](https://leetcode.com/problems/team-scores-in-football-tournament)
+
+#### 2024-08-09
+
+###### Python
+
+>[Leetcode 1190](https://leetcode.com/problems/reverse-substrings-between-each-pair-of-parentheses)
+
+>[Leetcode 2751](https://leetcode.com/problems/robot-collisions)
+
+##### SQL
+
+>[Leetcode 1322](https://leetcode.com/problems/ads-performance)
+
+>[Leetcode 1336](https://leetcode.com/problems/number-of-transactions-per-visit)

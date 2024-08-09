@@ -37,3 +37,41 @@ sqoop import --connect jdbc:postgresql://ec2-18-132-73-146.eu-west-2.compute.ama
 ```
 
 Hive: one table one directory.
+
+
+
+in python 
+input
+df has name , place ,countrycode
+dict has key as countrycode and value as countryname.
+
+output 
+dataframe must have 4 columns name , place ,countrycode, countryname 
+
+python
+
+df with 3 cols sourcecode,intermeidatecode,targetcode.
+ABC12,SCR,ABC12_2005f
+DFG,ab,345-dfg
+
+I want output dataframe as
+sourcecode,intermeidatecode,targetcode, modifiedcode
+ABC12,SCR,ABC12_2005f,SCR_2005f
+DFG,ab,345-dfg,ab-345
+
+
+```
+create external table julbatch.yesheng_new(name String, place String, countrycode String) row format delimited fields terminated by ',' stored as textfile location '/user/ec2-user/UKUSAJULHDFS/priyanshu_new' tblproperties("skip.header.line.count"="1");
+```
+
+```
+ create external table julbatch.yesheng_newP(name String, place String) partitioned by (countrycode String) row format delimited fields terminated by ',' stored as textfile;
+```
+
+```
+insert overwrite table julbatch.yesheng_newP select * from yesheng_new
+```
+
+```
+sudo -u hdfs hadoop fs -chmod -R 777 /warehouse/tablespace/external/hive/julbatch.db/yesheng_newP
+```
