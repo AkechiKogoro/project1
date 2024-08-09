@@ -35,3 +35,5 @@ sqoop import --connect jdbc:postgresql://ec2-18-132-73-146.eu-west-2.compute.ama
 ```
 sqoop import --connect jdbc:postgresql://ec2-18-132-73-146.eu-west-2.compute.amazonaws.com:5432/testdb --username consultants -password WelcomeItc@2022 --table customer_replicate --m 1 --target-dir /user/ec2-user/UKUSJULHDFS/yesheng/customer --incremental lastmodified --merge-key customer_id --check-column lastchange --last-value "2024-08-07 16:30:00"
 ```
+
+Hive: one table one directory.

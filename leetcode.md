@@ -140,3 +140,17 @@
 >[Leetcode 1179](https://leetcode.com/problems/reformat-department-table)
 
 >[Leetcode 1194](https://leetcode.com/problems/tournament-winners)
+
+#### 2024-08-08
+
+##### Python
+
+>[Leetcode 2196](https://leetcode.com/problems/create-binary-tree-from-descriptions)
+
+>[Leetcode 726](https://leetcode.com/problems/number-of-atoms)
+
+##### SQL
+
+>[Leetcode 1205](https://leetcode.com/problems/monthly-transactions-ii)
+
+>[Leetcode 1212](https://leetcode.com/problems/team-scores-in-football-tournament)
