@@ -4,7 +4,8 @@ SQL
 > - Data Definition Language (DDL):
 >
 >    These commands are used to define, alter, and manage schema and database objects.
->    1. CREATE: Used to create databases and database objects.
+>
+> 1. `CREATE`: Used to create databases and database objects.
 ``` 
         CREATE TABLE Employees (
             EmployeeID int,
@@ -14,13 +15,13 @@ SQL
         );
 ```
 >
->            2. ALTER: Used to modify existing database schema.
+> 2. `ALTER`: Used to modify existing database schema.
 >
 ```
         ALTER TABLE Employees ADD BirthDate date;
 ```
 >
->            3. DROP: Used to delete objects from the database.
+> 3. `DROP`: Used to delete objects from the database.
 >
 ```
         DROP TABLE Employees;
@@ -28,19 +29,19 @@ SQL
 > - Data Manipulation Language (DML): 
 >
 >       These commands are used for data handling and manipulation.
->       1. INSERT: Used to insert data into tables.
+>  1. `INSERT`: Used to insert data into tables.
 >
 ```
         INSERT INTO Employees (EmployeeID, FirstName, LastName, Email)
         VALUES (1, 'John', 'Doe', 'john.doe@example.com');
 ```
->           2. UPDATE: Used to modify existing data.
+>  2. `UPDATE`: Used to modify existing data.
 >
 ```
         UPDATE Employees SET Email = 'john.new@example.com' WHERE EmployeeID = 1;
 
 ```
->           3. DELETE: Used to remove data from a table.
+>  3. `DELETE`: Used to remove data from a table.
 >
 ```
             DELETE FROM Employees WHERE EmployeeID = 1;
@@ -49,12 +50,12 @@ SQL
 >
 >       These commands are related to rights, permissions, and other control mechanisms.
 >
->       1. GRANT: Gives user's access privileges to database.
+>  1. `GRANT`: Gives user's access privileges to database.
 >
 ```
         GRANT SELECT ON Employees TO user1;
 ```
->           2. REVOKE: Removes user's access privileges.
+>  2. `REVOKE`: Removes user's access privileges.
 >
 ```
         REVOKE SELECT ON Employees FROM user1;
@@ -63,19 +64,19 @@ SQL
 >
 >   These commands deal with transaction management.
 >
->       1. COMMIT: Saves all changes made in the transaction.
+> 1. `COMMIT`: Saves all changes made in the transaction.
 >
 ```
         COMMIT;
 ```
->       2. ROLLBACK: Undoes changes since the last commit.
+> 2. `ROLLBACK`: Undoes changes since the last commit.
 >
 ```
         ROLLBACK;
 ```
 > - Data Query Language (DQL)
 >
->       1. SELECT: Used to query data from a database.
+> 1. SELECT: Used to query data from a database.
 >      
 ```
         SELECT * FROM Employees;
