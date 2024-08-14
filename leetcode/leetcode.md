@@ -168,3 +168,31 @@
 >[Leetcode 1322](https://leetcode.com/problems/ads-performance)
 
 >[Leetcode 1336](https://leetcode.com/problems/number-of-transactions-per-visit)
+
+#### 2024-08-12
+
+##### Python
+
+>[Leetcode 703](https://leetcode.com/problems/kth-largest-element-in-a-stream)
+
+>[Leetcode 885](https://leetcode.com/problems/spiral-matrix-iii)
+
+##### SQL
+
+>[Leetcode 1364](https://leetcode.com/problems/number-of-trusted-contacts-of-a-customer)
+
+>[Leetcode 1355](https://leetcode.com/problems/activity-participants)
+
+#### 2024-08-13
+
+##### Python
+
+>[Leetcode 40](https://leetcode.com/problems/combination-sum-ii)
+
+>[Leetcode 826](https://leetcode.com/problems/most-profit-assigning-work)
+
+##### SQL
+
+>[Leetcode 1421](https://leetcode.com/problems/npv-queries)
+
+>[Leetcode 1435](https://leetcode.com/problems/create-a-session-bar-chart)
