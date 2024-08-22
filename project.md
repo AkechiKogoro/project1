@@ -23,11 +23,8 @@ For-Hire Vehicles (FHVs) provide pre-arranged transportation throughout New York
 4. Taxi Zone:
 LocationID, borough, zone, serviceZone. Also there is geospatial data, but I won't use that.
 
-<img src="taxi_zone_map_bronx.jpg" width=200 height=200>
-<img src="taxi_zone_map_brooklyn.jpg" width=200 height=200>
-<img src="taxi_zone_map_manhattan.jpg" width=200 height=200>
-<img src="taxi_zone_map_queens.jpg" width=200 height=200>
-<img src="taxi_zone_map_staten_island.jpg" width=200 height=200>
+<img src="taxi_zone_map_bronx.jpg" width=200 height=200> <img src="taxi_zone_map_brooklyn.jpg" width=200 height=200> <img src="taxi_zone_map_manhattan.jpg" width=200 height=200>
+<img src="taxi_zone_map_queens.jpg" width=200 height=200> <img src="taxi_zone_map_staten_island.jpg" width=200 height=200>
 
 ## Metrics
 
@@ -50,7 +47,7 @@ LocationID, borough, zone, serviceZone. Also there is geospatial data, but I won
 
 1. Clean data
 
-    Get rid of meaningless null values, filter out data which does not make sense (say both PUlocationID and DOlocationID are null, passenger_num is 0).
+    Get rid of meaningless null values, filter out data which does not make sense (say both PUlocationID and DOlocationID are null, passenger_num is 0), cast appropriate data types.
 
     Due to the size of the data, only focus on the data in 2022. For high-volume-for-hire-vehicle, sample a proportion (20%) of the total data.
 
