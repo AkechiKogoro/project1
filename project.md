@@ -2,17 +2,17 @@
 
 ## Dataset
 
-*Yellow cabs*  the only vehicles that have the right to pick up street-hailing and prearranged passengers anywhere in New York City.
+*Yellow cabs*  (590mb) the only vehicles that have the right to pick up street-hailing and prearranged passengers anywhere in New York City.
 
-*Street-hail Liveries*: permitted to accept street-hails. In exchange, Street-Hail Liveries may not operate in the Hail Exclusionary Zone, south of West 110th St and East 96th St.
+*Green taxi* (16.5mb) permitted to accept street-hails. In exchange, Street-Hail Liveries may not operate in the Hail Exclusionary Zone, south of West 110th St and East 96th St.
 
-*For-Hire Vehicle Bases*:
+*For-Hire Vehicle Bases* (140mb)
 For-Hire Vehicles (FHVs) provide pre-arranged transportation throughout New York City.
 
     - Livery Base
     - Black Car Base
     - Luxury Limousine Base
-    - High volume for high vehicle
+    - High volume for high vehicle (5.06GB)
         - Uber
         - Lyft
         - Juno
