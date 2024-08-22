@@ -75,3 +75,47 @@ insert overwrite table julbatch.yesheng_newP select * from yesheng_new
 ```
 sudo -u hdfs hadoop fs -chmod -R 777 /warehouse/tablespace/external/hive/julbatch.db/yesheng_newP
 ```
+
+### Sources
+
+1. Socket
+
+2. File
+
+3. Kafka
+
+### Kafka
+
+- Broker: Server
+
+- Topic: where producer sends the messages.
+
+- Producuer:
+
+- Consumer:'
+```
+ip-172-31-9-237.eu-west-2.compute.internal
+
+ip-172-31-1-36.eu-west-2.compute-.internal
+
+ip-172-31-13-101.eu-west-2.compute.internal
+```
+
+```
+kafka-topics --bootstrap server ip-172-31-1-36.eu-west-2.compute-.internal, ip-172-31-13-101.eu-west-2.compute.internal --create --topic julbatch
+```
+
+```
+kafka-console-producer --bootstrap-server ip-
+```
+
+
+|producer    | topic       | consumer group   |
+|:----------:|:-----------:|:----------------:|
+|            |partition 1  | consumer1        |
+|            |partition 2  |  consumer2       |
+|            | RF          |                  |
+
+multiple producer and multiple consumers to get parallelism
+
+num of partitions = num of consumers

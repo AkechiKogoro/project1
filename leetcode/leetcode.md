@@ -196,3 +196,23 @@
 >[Leetcode 1421](https://leetcode.com/problems/npv-queries)
 
 >[Leetcode 1435](https://leetcode.com/problems/create-a-session-bar-chart)
+
+#### 2024-08-14
+
+#### Python
+>[Leetcode 1701](https://leetcode.com/problems/average-waiting-time)
+
+>[Leetcode 1823](https://leetcode.com/problems/find-the-winner-of-the-circular-game)
+
+##### SQL
+
+>[Leetcode 1479](https://leetcode.com/problems/sales-by-day-of-the-week)
+
+>[Leetcode 1495](https://leetcode.com/problems/friendly-movies-streamed-last-month)
+
+#### 2024-08-15
+
+##### SQL
+>[Leetcode 1511](https://leetcode.com/problems/customer-order-frequency)
+
+>[Leetcode 1543](https://leetcode.com/problems/fix-product-name-format)

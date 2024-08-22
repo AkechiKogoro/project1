@@ -24,7 +24,7 @@ object DFDemo extends App{
 
     /*
     Outlier values are those outside (mean - 3 * std, mean + 3 * std)
-    here, we chose the interval to be (mean - 2 * std, mean + 3 * std),
+    here, we chose the interval to be (mean - 2 * std, mean + 2 * std),
     because otherwise there would be no outliers
      */
     val stats = productdf.agg(
