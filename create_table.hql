@@ -4,12 +4,11 @@ USE NYC_TLC_data;
 
 CREATE EXTERNAL TABLE IF NOT EXISTS data_for_hire_vehicle (
     dispatching_base_num STRING,
-    pickup_datetime TIMESTAMP,
-    dropoff_datetime TIMESTAMP,
     PUlocationID INT,
     DOlocationID INT,
-    SR_Flag INT,
-    Affiliated_base_number INT
+    affiliated_base_number INT,
+    pickup_datetime TIMESTAMP,
+    dropoff_datetime TIMESTAMP
 )
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
@@ -19,12 +18,9 @@ LOCATION "hdfs://ip-172-31-3-80.eu-west-2.compute.internal:8020//user//ec2-user/
 
 CREATE EXTERNAL TABLE IF NOT EXISTS data_yellow_taxi (
     vendorID INT,
-    tpep_pickup_datetime TIMESTAMP,
-    tpep_dropoff_datetime TIMESTAMP,
     passenger_count INT,
     trip_distance FLOAT,
     RatecodeID INT,
-    store_and_fwd_flag STRING,
     PUlocationID INT,
     DOlocationID INT,
     payment_type INT,
@@ -36,7 +32,10 @@ CREATE EXTERNAL TABLE IF NOT EXISTS data_yellow_taxi (
     improvement_surcharge FLOAT,
     total_amount FLOAT,
     congestion_surcharge FLOAT,
-    airport_fee FLOAT
+    airport_fee FLOAT,
+    pickup_datetime TIMESTAMP,
+    dropoff_datetime TIMESTAMP,
+    store_and_fwd_flag BOOLEAN
 )
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
@@ -46,9 +45,6 @@ LOCATION "hdfs://ip-172-31-3-80.eu-west-2.compute.internal:8020//user//ec2-user/
 
 CREATE EXTERNAL TABLE IF NOT EXISTS data_green_taxi (
     vendorID INT,
-    lpep_pickup_datetime TIMESTAMP,
-    lpep_dropoff_datetime TIMESTAMP,
-    store_and_fwd_flag STRING,
     RatecodeID INT,
     PUlocationID INT,
     DOlocationID INT,
@@ -64,7 +60,10 @@ CREATE EXTERNAL TABLE IF NOT EXISTS data_green_taxi (
     total_amount FLOAT,
     payment_type INT,
     trip_type INT,
-    congestion_surcharge FLOAT
+    congestion_surcharge FLOAT,
+    pickup_datetime TIMESTAMP,
+    dropoff_datetime TIMESTAMP,
+    store_and_fwd_flag BOOLEAN
 )
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
@@ -76,10 +75,6 @@ CREATE EXTERNAL TABLE IF NOT EXISTS data_high_volume_fhv (
     hvfhs_license_num STRING, 
     dispatching_base_num STRING, 
     originating_base_num STRING,
-    request_datetime TIMESTAMP, 
-    on_scene_datetime TIMESTAMP, 
-    pickup_datetime TIMESTAMP, 
-    dropoff_datetime TIMESTAMP, 
     PULocationID INT, 
     DOLocationID INT, 
     trip_miles FLOAT, 
@@ -92,16 +87,29 @@ CREATE EXTERNAL TABLE IF NOT EXISTS data_high_volume_fhv (
     airport_fee FLOAT, 
     tips FLOAT, 
     driver_pay FLOAT, 
-    shared_request_flag STRING,
-    shared_match_flag STRING, 
-    access_a_ride_flag STRING, 
-    wav_request_flag STRING, 
-    wav_match_flag STRING 
+    shared_request_flag BOOLEAN,
+    shared_match_flag BOOLEAN, 
+    access_a_ride_flag BOOLEAN, 
+    wav_request_flag BOOLEAN, 
+    wav_match_flag BOOLEAN,
+    pickup_datetime TIMESTAMP, 
+    dropoff_datetime TIMESTAMP,
+    request_datetime TIMESTAMP, 
+    on_scene_datetime TIMESTAMP
 )
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY ','
 STORED AS TEXTFILE
 LOCATION "hdfs://ip-172-31-3-80.eu-west-2.compute.internal:8020//user//ec2-user//UKUSJULHDFS//yesheng//clean_data//small_dataset//high_volume_for_hire_vehicle//";
 
-CREAT TABLE IT NOT EXISTS sample_high_volume_fhv AS
-SELECT * FROM data_high_volume_fhv WHERE RAND() < 0.2;
+CREATE TABLE IF NOT EXISTS sample_high_volume_fhv AS
+SELECT * FROM data_high_volume_fhv WHERE RAND() < 0.15;
+
+CREATE TABLE IF NOT EXISTS sample_for_hire_vehicle AS
+SELECT * FROM data_for_hire_vehicle WHERE RAND() < 0.15;
+
+CREATE TABLE IF NOT EXISTS sample_yellow_taxi AS
+SELECT * FROM data_yellow_taxi WHERE RAND() < 0.15;
+
+CREATE TABLE IF NOT EXISTS sample_green_taxi AS
+SELECT * FROM data_green_taxi WHERE RAND() < 0.15;

@@ -2,14 +2,10 @@ import pandas as pd
 import numpy as np
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import (
-    col,
-    sum,
-    avg,
-    stddev,
-    count,
-    countDistinct,
-    trim
+    col, sum, avg, stddev, count, countDistinct, trim,
+    to_utc_timestamp, from_utc_timestamp, when
 )
+import pyspark.sql.functions as F # min, max
 import glob
 import shapefile
 
@@ -33,39 +29,18 @@ df_high_volume_for_hire_vehicle = spark.read.parquet(f"{hdfs_directory}yesheng/r
 
 print(df_yellow_taxi.count(), df_green_taxi.count(), df_for_hire_vehicle.count())
 
-# hvfhv_path = "USUSJULHDFS/yesheng//raw_data//*//*//high_volume_for_hire_vehicle//*.parquet"
-
-# hadoop_conf = spark._jsc.hadoopConfiguration()
-# hadoop_fs = spark._jvm.org.apache.hadoop.fs.FileSystem.get(hadoop_conf)
-
-# Path = spark._jvm.org.apache.hadoop.fs.Path
-# status = hadoop_fs.globStatus(Path(hvfhv_path + "*.parquet"))
-
-
-# # Extract file paths
-# hvfhv_paths = [str(file.getPath()) for file in status]
-
-# print(hvfhv_path)
-# print(status)
-
-# spark = SparkSession.builder.appName("MemoryCheck").getOrCreate()
-
-# # Get the Spark configuration
-# conf = spark.sparkContext.getConf()
-
-# # Retrieve memory settings
-# driver_memory = conf.get("spark.driver.memory", "Not set")
-# executor_memory = conf.get("spark.executor.memory", "Not set")
-
-# print(f"Driver Memory: {driver_memory}")
-# print(f"Executor Memory: {executor_memory}")
-
-# # Stop the session
-# spark.stop()
 
 df_yellow_taxi = df_yellow_taxi.withColumn("passenger_count", col("passenger_count").cast("long")) \
     .withColumn("RatecodeID", col("RatecodeID").cast("long")) \
-    .filter(col("passenger_count") > 0)
+    .withColumn("pickup_datetime_utc", to_utc_timestamp("tpep_pickup_datetime", 'America/New_York')) \
+    .withColumn("dropoff_datetime_utc", to_utc_timestamp("tpep_dropoff_datetime", 'America/New_York')) \
+    .withColumn("pickup_datetime_nyc", from_utc_timestamp("pickup_datetime_utc", 'America/New_York')) \
+    .withColumn("dropoff_datetime_nyc", from_utc_timestamp("dropoff_datetime_utc", 'America/New_York')) \
+    .drop("tpep_pickup_datetime", "tpep_dropoff_datetime", "pickup_datetime_utc", "dropoff_datetime_utc") \
+    .withColumn("store_and_fwd", col("store_and_fwd_flag") != 'N') \
+    .drop("store_and_fwd_flag") \
+    .withColumnRenamed("pickup_datetime_nyc", "pickup_datetime") \
+    .withColumnRenamed("dropoff_datetime_nyc", "dropoff_datetime")
 
 df_yellow_taxi.write.csv(f"{hdfs_directory}yesheng/clean_data/small_dataset/yellow_taxi")
 
@@ -73,13 +48,34 @@ df_green_taxi = df_green_taxi.withColumn("RatecodeID", col("RatecodeID").cast("l
       .withColumn("passenger_count", col("passenger_count").cast("long")) \
       .withColumn("trip_type", col("trip_type").cast("long")) \
       .withColumn("payment_type", col("payment_type").cast("long")) \
-      .withColumn("ehail_fee", col("ehail_fee").cast("long"))
+      .withColumn("ehail_fee", col("ehail_fee").cast("long")) \
+      .withColumn("pickup_datetime_utc", to_utc_timestamp("lpep_pickup_datetime", 'America/New_York')) \
+      .withColumn("dropoff_datetime_utc", to_utc_timestamp("lpep_dropoff_datetime", 'America/New_York')) \
+      .withColumn("pickup_datetime_nyc", from_utc_timestamp("pickup_datetime_utc", 'America/New_York')) \
+      .withColumn("dropoff_datetime_nyc", from_utc_timestamp("dropoff_datetime_utc", 'America/New_York')) \
+      .drop("lpep_pickup_datetime", "lpep_dropoff_datetime", "pickup_datetime_utc", "dropoff_datetime_utc") \
+      .withColumn("store_and_fwd", col("store_and_fwd_flag") != 'N') \
+      .drop("store_and_fwd_flag") \
+      .withColumnRenamed("pickup_datetime_nyc", "pickup_datetime") \
+      .withColumnRenamed("dropoff_datetime_nyc", "dropoff_datetime") \
+      .withColumnRenamed("store_and_fwd", "store_and_fwd_flag")
 
 df_green_taxi.write.csv(f"{hdfs_directory}yesheng/clean_data/small_dataset/green_taxi")
 
 df_for_hire_vehicle = df_for_hire_vehicle.withColumn("PUlocationID", col("PUlocationID").cast("long")) \
-         .withColumn("DOlocationID", col("DOlocationID").cast("long")) \
-         .withColumn("Affiliated_base_number", trim(col("Affiliated_base_number"))) \
-         .filter((col("PUlocationID").isNotNull()) | (col("DOlocationID").isNotNull()))
+        .withColumn("DOlocationID", col("DOlocationID").cast("long")) \
+        .withColumn("Affiliated_base_number", trim(col("Affiliated_base_number"))) \
+        .filter((col("PUlocationID").isNotNull()) | (col("DOlocationID").isNotNull())) \
+        .withColumn("pickup_datetime_utc", to_utc_timestamp("pickup_datetime", 'America/New_York')) \
+        .withColumn("dropoff_datetime_utc", to_utc_timestamp("dropOff_datetime", 'America/New_York')) \
+        .withColumn("pickup_datetime_nyc", from_utc_timestamp("pickup_datetime_utc", 'America/New_York')) \
+        .withColumn("dropoff_datetime_nyc", from_utc_timestamp("dropoff_datetime_utc", 'America/New_York')) \
+        .drop("pickup_datetime", "dropOff_datetime", "pickup_datetime_utc", "dropoff_datetime_utc") \
+        .withColumnRenamed("pickup_datetime_nyc", "pickup_datetime") \
+        .withColumnRenamed("dropoff_datetime_nyc", "dropoff_datetime") \
+        .drop("SR_flag") \
+        .withColumn("dispatching_base_num", trim(col("dispatching_base_num"))) \
+        .withColumn("Affiliated_base_number", trim(col("Affiliated_base_number"))) \
+        .withColumnRenamed("Affiliated_base_number", "affiliated_base_number")
 
 df_for_hire_vehicle.write.csv(f"{hdfs_directory}yesheng/clean_data/small_dataset/for_hire_vehicle")
