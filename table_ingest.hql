@@ -113,3 +113,16 @@ SELECT * FROM data_yellow_taxi WHERE RAND() < 0.15;
 
 CREATE TABLE IF NOT EXISTS sample_green_taxi AS
 SELECT * FROM data_green_taxi WHERE RAND() < 0.15;
+
+
+CREATE EXTERNAL TABLE IF NOT EXISTS taxi_zone_lookup (
+    LocationID INT,
+    Borough STRING,
+    Zone String,
+    service_zone STRING
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+STORED AS TEXTFILE
+LOCATION "hdfs://ip-172-31-3-80.eu-west-2.compute.internal:8020//user//ec2-user//UKUSJULHDFS//yesheng//clean_data//taxi_zone_lookup//"
+TBLPROPERTIES ("skip.header.line.count"="1");
